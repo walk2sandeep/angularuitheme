@@ -1,0 +1,34 @@
+.bgcolor {
+    background-color: #5850b5;
+}
+
+.bgcolor1 {
+    /* background-color: #216353; */
+    background-color: #1f32ab;
+}
+
+.bgcolor2 {
+    background-color: #ef8c21;
+}
+
+.bgcolor3 {
+    background-color: #802f8a;
+}
+
+.bgcolor4 {
+    background-color: #216353;
+}
+
+.bgcolor5 {
+    background-color: #D63447;
+}
+
+.bgcolor6 {
+    background-color: #0f4c81;
+}
+
+@media (min-width:750px) and (max-width:1200px) {
+    .service-card {
+        min-height: 173px;
+    }
+}

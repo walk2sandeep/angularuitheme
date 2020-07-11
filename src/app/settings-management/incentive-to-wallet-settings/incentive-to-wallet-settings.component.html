@@ -1,0 +1,219 @@
+<div class="row mt-4">
+  <div class="col-12">
+    <h2 class="h2 headUnder mobBtnAlign">Incentive to Wallet Settings</h2>
+    <div class="position-absolute topBtn">
+      <button class="btns blueBtn btnSmall" mat-raised-button>Exception User List</button>
+    </div>
+  </div>
+</div>
+<form>
+  <div class="row">
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Select User*</mat-label>
+        <mat-select>
+          <mat-option value="option">Agent</mat-option>
+          <mat-option value="option">Distributor</mat-option>
+          <mat-option value="option" selected>Aggregator</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Criteria*</mat-label>
+        <mat-select>
+          <mat-option value="option" selected>Minimum Amount</mat-option>
+          <mat-option value="option">Maximum Amount</mat-option>
+          <mat-option value="option">Transfer Charges</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Amount Slabs*</mat-label>
+        <mat-select>
+          <mat-option value="option" selected>Option 1</mat-option>
+          <mat-option value="option">Option 2</mat-option>
+          <mat-option value="option">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Settlement Period*</mat-label>
+        <mat-select>
+          <mat-option value="option" selected>Option 1</mat-option>
+          <mat-option value="option">Option 2</mat-option>
+          <mat-option value="option">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Day*</mat-label>
+        <mat-select>
+          <mat-option value="option" selected>Sunday</mat-option>
+          <mat-option value="option">Monday</mat-option>
+          <mat-option value="option">Thursday</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Current Min Amount</mat-label>
+        <input matInput placeholder="Current Min Amount">
+      </mat-form-field>  
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Updated Min Amount</mat-label>
+        <input matInput placeholder="Updated Min Amount" required>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Applicability*</mat-label>
+        <input matInput [matDatepicker]="picker2">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>  
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Remarks</mat-label>
+        <input matInput placeholder="Remarks" required>
+      </mat-form-field>  
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <div class="customInput position-relative">
+        <input type="file" class="custom-file-input" id="customFile" name="filename">
+        <label class="custom-file-label" for="customFile">Upload Docs as Proof*</label>
+      </div> 
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 text-right">
+      <button class="btns secondaryBtn mr-3" mat-raised-button>Reset</button>
+      <button class="btns greenBtn" mat-raised-button>Submit</button>
+    </div>
+  </div> 
+</form>
+<div class="row mt-4">
+    <div class="col-md-4">
+        <mat-form-field appearance="outline">
+            <mat-label>From Date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>    
+    </div>
+    <div class="col-md-4">
+        <mat-form-field appearance="outline">
+            <mat-label>To Date</mat-label>
+            <input matInput [matDatepicker]="picker1">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>    
+    </div>
+    <div class="col-md-4 mt-2">
+      <button class="btns primaryBtn" mat-raised-button>Submit</button>
+      <a class="btns greenBtn btnSmall ml-3" href="#" mat-raised-button><i class="fa fa-table" aria-hidden="true"></i> Export to Excel</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="table-responsive IntoWalletTbl">
+        <table mat-table [dataSource]="dataSource" class="table customTable shadow-none mb-0">
+          <!-- Position Column -->
+          <ng-container matColumnDef="no">
+            <th mat-header-cell *matHeaderCellDef> S.No </th>
+            <td mat-cell *matCellDef="let element"> {{element.no}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="requested_date">
+            <th mat-header-cell *matHeaderCellDef> Requested Date</th>
+            <td mat-cell *matCellDef="let element"> {{element.requested_date}} </td>
+          </ng-container>              
+          <ng-container matColumnDef="txn_id">
+            <th mat-header-cell *matHeaderCellDef>Transaction ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.txn_id}} </td>
+          </ng-container>
+          <!-- Weight Column -->
+          <ng-container matColumnDef="processed_date">
+            <th mat-header-cell *matHeaderCellDef>Processed Date</th>
+            <td mat-cell *matCellDef="let element"> {{element.processed_date}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="user_type">
+            <th mat-header-cell *matHeaderCellDef>User Type</th>
+            <td mat-cell *matCellDef="let element"> {{element.user_type}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="crieteria">
+            <th mat-header-cell *matHeaderCellDef> Crieteria Type</th>
+            <td mat-cell *matCellDef="let element"> {{element.crieteria}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="amount_slabs">
+            <th mat-header-cell *matHeaderCellDef>Amount Slabs</th>
+            <td mat-cell *matCellDef="let element"> {{element.amount_slabs}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="selltement_period">
+            <th mat-header-cell *matHeaderCellDef>Selltement Period</th>
+            <td mat-cell *matCellDef="let element"> {{element.selltement_period}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="selected_day">
+            <th mat-header-cell *matHeaderCellDef>Selected Day</th>
+            <td mat-cell *matCellDef="let element"> {{element.selected_day}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="previous_value">
+            <th mat-header-cell *matHeaderCellDef>Previous Value</th>
+            <td mat-cell *matCellDef="let element"> {{element.previous_value}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="updated_value">
+            <th mat-header-cell *matHeaderCellDef>Updated Value</th>
+            <td mat-cell *matCellDef="let element"> {{element.previous_value}} </td>
+          </ng-container>
+          <ng-container matColumnDef="transaction_status">
+            <th mat-header-cell *matHeaderCellDef>Transaction Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.transaction_status}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="updated_by">
+            <th mat-header-cell *matHeaderCellDef>Updated By</th>
+            <td mat-cell *matCellDef="let element"> {{element.updated_by}} </td>
+          </ng-container>
+          <ng-container matColumnDef="ip_address">
+            <th mat-header-cell *matHeaderCellDef>IP Address</th>
+            <td mat-cell *matCellDef="let element"> {{element.ip_address}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="remarks">
+            <th mat-header-cell *matHeaderCellDef>Remarks</th>
+            <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="download_proof">
+            <th mat-header-cell *matHeaderCellDef>Download Proof</th>
+            <td class="downloadIcon" mat-cell *matCellDef="let element"> {{element.download_proof}} </td>
+          </ng-container>
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td class="deleteIcon" mat-cell *matCellDef="let element"> {{element.action}} </td>
+          </ng-container>
+          
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>   
+      </div>
+      
+        <mat-paginator  [length]="100"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>       
+    </div>  
+</div>

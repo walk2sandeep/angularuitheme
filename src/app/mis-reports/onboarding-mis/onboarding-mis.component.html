@@ -1,0 +1,128 @@
+<h2 class="h2 headUnder text-capitalize mt-4">Onboarding MIS</h2>
+<div class="row">
+    <div class="col-xl-9 col-md-12">
+        <div class="row">
+          <div class="col-md-6 col-xl-3">
+            <mat-form-field appearance="outline">
+                <mat-label>From Date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <mat-form-field appearance="outline">
+                <mat-label>To Date</mat-label>
+                <input matInput [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <mat-form-field appearance="outline">
+                <mat-label>User Types</mat-label>
+                <mat-select>
+                    <mat-option value="option">All</mat-option>
+                    <mat-option value="option">Agent</mat-option>
+                    <mat-option value="option">Distributor</mat-option>
+                    <mat-option value="option">Aggregator</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <mat-form-field appearance="outline">
+                <mat-label>Application Status</mat-label>
+                <mat-select>
+                    <mat-option value="option">Pending</mat-option>
+                    <mat-option value="option">Reject</mat-option>
+                    <mat-option value="option">Change Request</mat-option>
+                    <mat-option value="option">Approved</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+      </div>
+  </div>
+  <div class="col-md-12 col-xl-3 mt-2 text-right text-lg-left">
+        <button class="btns secondaryBtn mr-2" mat-raised-button>Reset</button>
+        <button class="btns primaryBtn" mat-raised-button>Search</button>
+  </div>
+</div>
+
+<h2 class="h2 headUnder text-capitalize mt-3">Onboarding Team</h2>
+<div class="row">
+  <div class="col-md-6 col-xl-4">
+    <div class="agent_box border_violet">
+      <span>Total User ID Created</span>
+      <h4>140</h4>
+    </div>
+    <div class="agent_box border_green">
+      <span>Total Application Approved by FO</span>
+      <h4>12</h4>
+    </div>
+    <div class="agent_box border_red">
+      <span>Total Application Rejected by CO</span>
+      <h4>23</h4>
+    </div>
+    <div class="agent_box border_skyblue">
+      <span>Total Change Request Created by FO</span>
+      <h4>36</h4>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-4">
+    <div class="agent_box border_blue">
+      <span>Total Application Submitted by SO</span>
+      <h4>43</h4>
+    </div>
+    <div class="agent_box border_yellow">
+      <span>Total Application Pending at CO</span>
+      <h4>52</h4>
+    </div>
+    <div class="agent_box border_red">
+      <span>Total Application Rejected by FO</span>
+      <h4>21</h4>
+    </div>
+  </div>
+  <div class="col-md-6 col-xl-4">
+    <div class="agent_box border_green">
+      <span>Total Application Approved by CO</span>
+      <h4>76</h4>
+    </div>
+    <div class="agent_box border_yellow">
+      <span>Total Application Pending at FO</span>
+      <h4>42</h4>
+    </div>
+    <div class="agent_box border_skyblue">
+      <span>Total Change Request Created by CO</span>
+      <h4>86</h4>
+    </div>
+  </div>
+</div>
+<h2 class="h2 headUnder text-capitalize mt-4">Onboarding Form Tracking</h2>
+  <div class="row">
+    <div class="col-md-6 col-xl-4">
+      <div class="agent_box border_blue">
+        <span>SO wise Submitted Application</span>
+        <h4>10</h4>
+      </div>
+      <div class="agent_box border_green">
+        <span>FO wise Approved Application</span>
+        <h4>06</h4>
+      </div>
+    </div>
+    <div class="col-md-6 col-xl-4">
+      <div class="agent_box border_red">
+        <span>CO wise Rejected Application</span>
+        <h4>19</h4>
+      </div>
+      <div class="agent_box border_red">
+        <span>FO wise Rejected Application</span>
+        <h4>24</h4>
+      </div>
+    </div>
+    <div class="col-md-6 col-xl-4">
+      <div class="agent_box border_green">
+        <span>Total Application Approved</span>
+        <h4>06</h4>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,73 @@
+<section class="whiteBox">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="h2 headUnder text-capitalize">User Type wise MIS</h2>
+        </div>
+    </div>
+    <div class="hitBox">
+        <div class="row">
+            <div class="col-md-4 col-xl-3 pr-3 pr-xl-0">
+                <mat-form-field appearance="outline">
+                    <mat-label>User ID</mat-label>
+                    <input matInput placeholder="User Wise" required>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4 col-xl-3 pr-3 pr-xl-0">
+                <mat-form-field appearance="outline">
+                    <mat-label>From Date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4 col-xl-3 pr-3 pr-xl-0">
+                <mat-form-field appearance="outline">
+                    <mat-label>To Date</mat-label>
+                    <input matInput [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-12 col-xl-3 mt-2 mb-4 mb-xl-0 text-right text-xl-left">
+                <button class="btns secondaryBtn mr-2" mat-raised-button>Reset</button>
+                <button class="btns primaryBtn" mat-raised-button>Search</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <mat-tab-group class="boxTab" mat-align-tabs="left"  animationDuration="0ms">
+                <mat-tab label="Wallet Balance History">
+                    <app-wallet-balance-history></app-wallet-balance-history>
+                </mat-tab>
+                <mat-tab label="Wallet Recharge History">
+                    <app-wallet-recharge-history></app-wallet-recharge-history>
+                </mat-tab>
+                <mat-tab label="Transaction History">
+                    <app-transaction-history></app-transaction-history>
+                </mat-tab>
+                <mat-tab label="Incentive and TDS History">
+                    <app-incentive-and-tds-history></app-incentive-and-tds-history>
+                </mat-tab>
+                <mat-tab label="Reserved History">
+                    <app-reserved-history></app-reserved-history>
+                </mat-tab>
+                <mat-tab label="Receivable History">
+                    <app-receivable-history></app-receivable-history>
+                </mat-tab>
+                <mat-tab label="Incentive to Wallet">
+                    <app-incentive-to-wallet></app-incentive-to-wallet>
+                </mat-tab>
+                <mat-tab label="Incentive to Bank">
+                    <app-incentive-to-bank></app-incentive-to-bank>
+                </mat-tab>
+                <mat-tab label="Wallet to Bank">
+                    <app-wallet-to-bank></app-wallet-to-bank>
+                </mat-tab>
+                <mat-tab label="Refund Transaction">
+                    <app-refund-transaction></app-refund-transaction>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</section>

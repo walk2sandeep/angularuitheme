@@ -1,0 +1,158 @@
+<h2 class="h2 headUnder">Fund Deposit Approval</h2>
+<div class="row DashcardList">
+  <div class="col-md-4">
+    <div class="card blueBg customCard1">
+      <span class="DashIcon blueBg"><img alt="Applications" src="./assets/img/icons/approved-icon1.png"></span>
+      <h3>Approved Deposits</h3>
+      <div class="w-100 d-flex">
+        <h4 class="totalCount"><span>Total Count</span> 4637</h4>
+        <h4 class="totalAmount"><span>Total Amount</span> <i class="fa fa-inr"></i>72000</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card yellowBg customCard1">
+      <span class="DashIcon yellowBg"><img alt="Applications" src="./assets/img/icons/pending-icon1.png"></span>
+      <h3>Pending Deposits</h3>
+      <div class="w-100 d-flex">
+        <h4 class="totalCount"><span>Total Count</span> 4637</h4>
+        <h4 class="totalAmount"><span>Total Amount</span> <i class="fa fa-inr"></i>70000</h4>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card redBg customCard1">
+      <span class="DashIcon Rejected"><img alt="Applications" src="./assets/img/icons/rejected-icon1.png"></span>
+      <h3>Rejected Deposits</h3>
+      <div class="w-100 d-flex">
+        <h4 class="totalCount"><span>Total Count</span> 4637</h4>
+        <h4 class="totalAmount"><span>Total Amount</span> <i class="fa fa-inr"></i>87000</h4>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="customCard card">
+    <h2 class="h2 headUnder">Fund Deposit Summary</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <mat-form-field appearance="outline">
+                <mat-label>Search</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+                <div class="col-md-3">
+                  <mat-form-field appearance="outline">
+                      <mat-label>From Date</mat-label>
+                      <input matInput [matDatepicker]="picker">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                  <mat-form-field appearance="outline">
+                      <mat-label>To Date</mat-label>
+                      <input matInput [matDatepicker]="picker1">
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+              </div>
+              <div class="col-md-3">
+                <mat-form-field appearance="outline">
+                  <mat-label>Status</mat-label>
+                  <mat-select>
+                    <mat-option value="option">Active</mat-option>
+                    <mat-option value="option">Inactive</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 mt-2">
+                  <button class="btns primaryBtn" mat-raised-button>Search</button>
+              </div>
+           </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+          <div class="table-responsive walletTbl">
+            <table mat-table [dataSource]="dataSource" class="table customTable shadow-none mb-0">
+              <!-- Position Column -->
+              <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> S.No </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> User Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef> User Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+              </ng-container>              
+              <ng-container matColumnDef="depositno">
+                <th mat-header-cell *matHeaderCellDef> Transaction Date & Time </th>
+                <td mat-cell *matCellDef="let element"> {{element.depositno}} </td>
+              </ng-container>
+              <!-- Weight Column -->
+              <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef> Transaction ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+              </ng-container>
+              <ng-container matColumnDef="depositamount">
+                <th mat-header-cell *matHeaderCellDef> Deposit Amount <i class="fa fa-inr"></i></th>
+                <td mat-cell *matCellDef="let element"> {{element.depositamount}} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="depositdate">
+                <th mat-header-cell *matHeaderCellDef> Deposit Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.depositdate}} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="created_date">
+                <th mat-header-cell *matHeaderCellDef> Processed Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.created_date}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="transaction">
+                <th mat-header-cell *matHeaderCellDef> Transaction Mode </th>
+                <td mat-cell *matCellDef="let element"> {{element.transaction}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="depositmode">
+                <th mat-header-cell *matHeaderCellDef> Deposit Mode</th>
+                <td mat-cell *matCellDef="let element"> {{element.depositmode}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef> Status</th>
+                <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="remarks">
+                <th mat-header-cell *matHeaderCellDef> Remarks </th>
+                <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Action </th>
+                <td class="viewIcon" mat-cell *matCellDef="let element"> {{element.action}} </td>
+              </ng-container>
+  
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>   
+          </div>
+          
+            <mat-paginator  [length]="100"
+                        [pageSize]="10"
+                        [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>       
+        </div>  
+      </div>
+  </div>

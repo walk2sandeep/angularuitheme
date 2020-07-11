@@ -1,0 +1,462 @@
+<section class="whiteBox">
+    <form class="example-form">
+      <section class="documentVerify mt-0 position-relative">
+        <h2 class="h2">Add User</h2>
+        <!-- <div class="refNo">
+          <mat-form-field appearance="outline">
+            <mat-label>Unique Referece Number</mat-label>
+            <input matInput value="542FG67" disabled>
+          </mat-form-field>
+        </div> -->
+        <div class="docVerifyBody">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Unique Referece Number *</mat-label>
+                <input matInput value="542FG67" disabled required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>User *</mat-label>
+                <mat-select >
+                  <mat-option value="option">Admin</mat-option>
+                  <mat-option value="option">Retail</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>User Type *</mat-label>
+                <mat-select>
+                  <mat-option value="option">Company</mat-option>
+                  <mat-option value="option">Distributer</mat-option>
+                  <mat-option value="option">Individual</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Project Type *</mat-label>
+                <mat-select >
+                  <mat-option value="option">Admin</mat-option>
+                  <mat-option value="option">Retail</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Project ID</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+        </div> 
+      </div>
+    </section>
+      
+    </form> 
+    
+    
+    <form class="example-form">
+      <section class="documentVerify">
+        <h2 class="h2">Agent General Information</h2>
+        <div class="docVerifyBody">
+          <div class="row">
+            <div class="col-lg-3 col-md-6 text-center profilePic d-block d-md-none">
+              <!-- <p class="danger-text"><small>(*) Image is mandatory</small></p> -->
+              <div class="position-relative card d-inline-block">
+                <img src="./assets/img/icons/pic.png">
+              </div>
+              <div class="customInput position-absolute">
+                <input type="file" class="custom-file-input" id="customFile" name="filename">
+                <label class="custom-file-label" for="customFile">Upload Photo</label>
+              </div> 
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Name of Agent</mat-label>
+                <input matInput required>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Education Qualification * </mat-label>
+                <mat-select>
+                  <mat-option value="option">10<sup>th</sup></mat-option>
+                  <mat-option value="option">12<sup>th</sup></mat-option>
+                  <mat-option value="option">Graduation</mat-option>
+                  <mat-option value="option">Post Graduation</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Gender *</mat-label>
+                <mat-select>
+                  <mat-option value="option">Male</mat-option>
+                  <mat-option value="option">Female</mat-option>
+                  <mat-option value="option">Transgender</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field class="mobNo" appearance="outline">
+                <mat-label>Mobile Number </mat-label>
+                <span matPrefix class="countryCode">+91 &nbsp;</span>
+                <input type="tel" matInput placeholder="555-555-1234" required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>DOB</mat-label>
+                <input matInput [matDatepicker]="picker" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input type="email" matInput placeholder="555-555-1234" required>
+                <mat-icon matPrefix>email</mat-icon>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6 text-center profilePic d-none d-md-block">
+              <!-- <p class="danger-text"><small>(*) Image is mandatory</small></p> -->
+              <div class="position-relative card d-inline-block">
+                <img src="./assets/img/icons/pic.png">
+              </div>
+              <div class="customInput position-absolute">
+                <input type="file" class="custom-file-input" id="customFile" name="filename">
+                <label class="custom-file-label" for="customFile">Upload Photo</label>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <section class="documentVerify">
+        <h2 class="h2">Residential Address <small>(as per Address Proof)</small></h2>
+        <div class="docVerifyBody">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Address Line 1 </mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Address Line 2 </mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>State</mat-label>
+                <mat-select>
+                  <mat-option value="option">Tamil Nadu</mat-option>
+                  <mat-option value="option">Kerala</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>District</mat-label>
+                <mat-select>
+                  <mat-option value="option">Chennai</mat-option>
+                  <mat-option value="option">Coimbatore</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Taluk </mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Village </mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>City </mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Pincode </mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <section class="documentVerify">
+        <h2 class="h2">Outlet Address <small>( Same as above <mat-checkbox> </mat-checkbox>)</small></h2>
+        <div class="docVerifyBody">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Address Line 1 </mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Address Line 2 </mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>State</mat-label>
+                <mat-select>
+                  <mat-option value="option">Tamil Nadu</mat-option>
+                  <mat-option value="option">Kerala</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>District</mat-label>
+                <mat-select>
+                  <mat-option value="option">Chennai</mat-option>
+                  <mat-option value="option">Coimbatore</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Taluk </mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Village </mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>City </mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Pincode </mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </section>
+   
+
+      <section class="documentVerify">
+        <h2 class="h2">Banking Information as per Cancelled Cheque / Bank Passbook copy</h2>
+        <div class="docVerifyBody">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Account Holder Name</mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Account Number  </mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>IFSC code  </mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Name of Bank</mat-label>
+                <input matInput required>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Branch Name </mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Branch Address </mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Type of Account</mat-label>
+                <mat-select>
+                  <mat-option value="option">Current</mat-option>
+                  <mat-option value="option">Loan</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <section class="documentVerify">
+        <h2 class="h2">Other Information</h2>
+        <div class="docVerifyBody">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Religion</mat-label>
+                <mat-select>
+                  <mat-option value="option">Hindu</mat-option>
+                  <mat-option value="option">Muslim</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Marital Status</mat-label>
+                <mat-select>
+                  <mat-option value="option">Married</mat-option>
+                  <mat-option value="option">Single</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Family Income (Yearly)</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Nature of Business</mat-label>
+                <mat-select>
+                  <mat-option value="option">Accounting</mat-option>
+                  <mat-option value="option">Retail</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Expected Business / Month</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Name of Establishment</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="documentVerify">
+        <h2 class="h2">Documents required for verification</h2>
+        <div class="docVerifyBody">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Id Proof</mat-label>
+                <mat-select>
+                  <mat-option value="option">PAN Card</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>PAN Number</mat-label>
+                <input matInput>
+              </mat-form-field>
+              <div class="position-relative">
+                <div class="customInput">
+                  <input type="file" class="custom-file-input" id="customFile" name="filename">
+                  <label class="custom-file-label" for="customFile"><img width="50px" src="./assets/img/icons/pancard.png"> </label>
+                </div> 
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Address Proof</mat-label>
+                <mat-select>
+                  <mat-option value="option">Aadhar Card</mat-option>
+                  <mat-option value="option">Voter ID</mat-option>
+                  <mat-option value="option">Passport</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="position-relative mt-1">
+                <div class="customInput">
+                  <input type="file" class="custom-file-input" id="customFile" name="filename">
+                  <label class="custom-file-label" for="customFile"><img width="50px" src="./assets/img/icons/address-proof.png"> Front End</label>
+                </div> 
+              </div>
+              <div class="position-relative mt-1">
+                <div class="customInput">
+                  <input type="file" class="custom-file-input" id="customFile" name="filename">
+                  <label class="custom-file-label" for="customFile"><img width="50px" src="./assets/img/icons/address-proof.png"> Back End </label>
+                </div> 
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Bank Passbook / Chequebook</mat-label>
+                <mat-select>
+                  <mat-option value="option">Chequebook</mat-option>
+                  <mat-option value="option">Passport</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="position-relative">
+                <div class="customInput">
+                  <input type="file" class="custom-file-input" id="customFile" name="filename">
+                  <label class="custom-file-label" for="customFile"><img width="50px" src="./assets/img/icons/passbook.png"> </label>
+                </div> 
+              </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Agent On-boarding Form</mat-label>
+                <mat-select>
+                  <mat-option value="option" selected>Agent Unholding Form</mat-option>
+                  <mat-option value="option">Voter ID</mat-option>
+                  <mat-option value="option">Passport</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div class="position-relative">
+                <div class="customInput">
+                  <input type="file" class="custom-file-input" id="customFile" name="filename">
+                  <label class="custom-file-label" for="customFile"><img width="50px" src="./assets/img/icons/form.png"> </label>
+                </div>
+              </div> 
+            </div>
+          </div>
+          <p class="text-center h4">KYC is completely free - <strong>Do not take cash</strong> from any agent for KYC completion</p>
+        </div>
+      </section>
+
+      <div class="row mt-4">
+        <div class="col-md-6 twoBtnalign offset-md-6">
+            <button class="btns redBtn mr-3" mat-raised-button>Cancel</button>
+            <button class="btns greenBtn" mat-raised-button>Submit</button>
+        </div>
+      </div>   
+    </form>  
+</section>  

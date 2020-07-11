@@ -1,0 +1,142 @@
+<form class="example-form  mt-4">
+    <h2 class="h2 headUnder">Min & Max Amount Transfer Limit</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <mat-form-field appearance="outline">
+                <mat-label>Min.Amount to Transfer</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field appearance="outline">
+                <mat-label>Max. Amount Limit</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3">
+            <mat-form-field appearance="outline">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>    
+        </div>
+        <div class="col-md-3">
+            <mat-form-field appearance="outline">
+                <mat-label>End Date</mat-label>
+                <input matInput [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>    
+        </div>
+    </div>
+     
+    <div class="row mt-2">
+        <div class="col-md-12 text-right">
+            <button class="btns redBtn mr-3" mat-raised-button>Cancel</button>
+            <button class="btns blueBtn" mat-raised-button>Edit</button>
+        </div>
+    </div>    
+</form>
+<form class="example-form  mt-4">
+    <h2 class="h2 headUnder"> Applicable Service Charges for (T+1) Day Transfer</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Service Charges</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>    
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>End Date</mat-label>
+                <input matInput [matDatepicker]="picker3">
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>    
+        </div>
+    </div>
+     
+    <div class="row mt-2">
+        <div class="col-md-12 text-right">
+            <button class="btns redBtn mr-3" mat-raised-button>Cancel</button>
+            <button class="btns blueBtn" mat-raised-button>Edit</button>
+        </div>
+    </div>    
+</form>
+<form class="example-form  mt-4">
+    <h2 class="h2 headUnder"> Applicable Service Charges for Real Time Transfer</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Incentive Wallet Limit</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker4">
+                <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                <mat-datepicker #picker4></mat-datepicker>
+            </mat-form-field>    
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>End Date</mat-label>
+                <input matInput [matDatepicker]="picker5">
+                <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                <mat-datepicker #picker5></mat-datepicker>
+            </mat-form-field>    
+        </div>
+    </div>
+     
+    <div class="row mt-2">
+        <div class="col-md-12 text-right">
+            <button class="btns redBtn mr-3" mat-raised-button>Cancel</button>
+            <button class="btns blueBtn" mat-raised-button>Edit</button>
+        </div>
+    </div>    
+</form>
+<form class="example-form  mt-4">
+    <h2 class="h2 headUnder">Applicable Service Charges for Same Day Transfer</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Service Charges</mat-label>
+                <input matInput>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker6">
+                <mat-datepicker-toggle matSuffix [for]="picker6"></mat-datepicker-toggle>
+                <mat-datepicker #picker6></mat-datepicker>
+            </mat-form-field>    
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>End Date</mat-label>
+                <input matInput [matDatepicker]="picker7">
+                <mat-datepicker-toggle matSuffix [for]="picker7"></mat-datepicker-toggle>
+                <mat-datepicker #picker7></mat-datepicker>
+            </mat-form-field>    
+        </div>
+    </div>
+     
+    <div class="row mt-2">
+        <div class="col-md-12 text-right">
+            <button class="btns redBtn mr-3" mat-raised-button>Cancel</button>
+            <button class="btns blueBtn" mat-raised-button>Edit</button>
+        </div>
+    </div>    
+</form>

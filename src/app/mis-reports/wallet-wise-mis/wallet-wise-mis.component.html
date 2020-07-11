@@ -1,0 +1,109 @@
+<div class="row mt-4">
+  <div class="col-12">
+      <h2 class="h2 headUnder text-capitalize mobBtnAlign">Wallet wise MIS</h2>
+      <div class="position-absolute topBtn">
+          <a class="btns greenBtn btnSmall" href="#" mat-raised-button><i class="fa fa-table" aria-hidden="true"></i> Export to Excel</a>
+      </div>
+  </div>
+</div>
+<div class="row">
+    <div class="col-xl-10 col-md-12">
+        <div class="row">
+          <div class="col-md-6 col-xl-3">
+              <mat-form-field appearance="outline">
+                  <mat-label>Wallet Types</mat-label>
+                  <mat-select>
+                      <mat-option value="option">All</mat-option>
+                      <mat-option value="option">Master wallet</mat-option>
+                      <mat-option value="option">Commission Wallet</mat-option>
+                      <mat-option value="option">Reserve Wallet</mat-option>
+                      <mat-option value="option">Receivable Wallet</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+          <div class="col-md-6 col-xl-3">
+              <mat-form-field appearance="outline">
+                  <mat-label>From Date</mat-label>
+                  <input matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+          </div>
+          <div class="col-md-6 col-xl-3">
+              <mat-form-field appearance="outline">
+                  <mat-label>To Date</mat-label>
+                  <input matInput [matDatepicker]="picker1">
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+              </mat-form-field>
+          </div>
+          <div class="col-md-6 col-xl-3">
+              <mat-form-field appearance="outline">
+                  <mat-label>User ID</mat-label>
+                  <input matInput placeholder="User Wise">
+              </mat-form-field>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-2 mt-2 text-right text-lg-left">
+        <button class="btns primaryBtn" mat-raised-button>Search</button>
+    </div>
+</div>
+<div class="row mt-4 mt-xl-0">
+    <div class="col-12">
+      <div class="table-responsive">
+        <table mat-table [dataSource]="dataSource" class="table customTable shadow-none mb-0">
+          
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> S.No </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+          </ng-container>
+      
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> User Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> User Id </th>
+            <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+          </ng-container>              
+          <ng-container matColumnDef="depositno">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.depositno}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef>Wallet Type</th>
+            <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+          </ng-container>
+          <ng-container matColumnDef="depositamount">
+            <th mat-header-cell *matHeaderCellDef> Available Amount <i class="fa fa-inr"></i></th>
+            <td mat-cell *matCellDef="let element"> {{element.depositamount}} </td>
+          </ng-container>
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="remarks">
+            <th mat-header-cell *matHeaderCellDef> Remarks </th>
+            <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td class="viewIcon" mat-cell *matCellDef="let element"> {{element.action}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>   
+      </div>
+      
+        <mat-paginator  [length]="100"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>       
+    </div>  
+</div>

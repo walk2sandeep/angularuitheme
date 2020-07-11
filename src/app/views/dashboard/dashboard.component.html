@@ -1,0 +1,188 @@
+<div class="row DashcardList DashcardList1">
+  <div class="col-md-4">
+    <div class="card skyblueBg">
+      <span class="DashIcon pinkBg"><img alt="Applications" src="./assets/img/icons/network.png"></span>
+      <span>Total Network Members</span>
+      <h4>1763</h4></div>
+  </div>
+  <div class="col-md-4">
+    <div class="card purpleBg">
+      <span class="DashIcon purpleBg"><img alt="Subscriptions" src="./assets/img/icons/business.png"></span>
+      <span>Total Business</span>
+      <h4>3660</h4></div>
+  </div>
+  <div class="col-md-4">
+    <div class="card greenBg">
+      <span class="DashIcon pinkBg"><img alt="Plans" src="./assets/img/icons/commission.png"></span>
+      <span>Total Commission </span>
+      <h4><i class="fa fa-inr"></i> 9450</h4></div>
+  </div>
+</div>
+
+<div class="row mt-3 dashTwocard">
+  <div class="col-md-6">
+    <div class="card customCard">
+      <h2 class="h2 headUnder">Onboarding Team</h2>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="agent_box border_blue">
+            <span>Total Sales Officer(SO)</span>
+            <h4>140</h4>
+          </div>
+          <div class="agent_box border_brown">
+            <span>Toatl Financial Officer(CO)</span>
+            <h4>36</h4>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="agent_box border_violet">
+            <span>Toatl Checking Officer(CO)</span>
+            <h4>36</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card customCard">
+      <h2 class="h2 headUnder">Onboarding Form Tracking</h2>
+      <div class="row">
+        <div class="col-xl-6">
+          <div class="agent_box border_blue">
+            <span>Total Application Received</span>
+            <h4>10</h4>
+          </div>
+          <div class="agent_box border_yellow">
+            <span>Total Application Pending</span>
+            <h4>06</h4>
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="agent_box border_green">
+            <span>Total Application Approved</span>
+            <h4>06</h4>
+          </div>
+          <div class="agent_box border_skyblue">
+            <span>Total Application Approved by Bank</span>
+            <h4>06</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="row mt-3">
+    <div class="col-xl-6">
+      <div class="card customCard px-4">
+        <h2 class="h2 headUnder">Traffic &amp; Sales</h2>
+        <div class="d-block">
+          <canvas height="300px" baseChart class="chart"
+                  [chartType]="chartType"
+                  [datasets]="chartDatasets"
+                  [labels]="chartLabels"
+                  [colors]="chartColors"
+                  [options]="chartOptions"
+                  [legend]="true"
+                  (chartHover)="chartHovered($event)"
+                  (chartClick)="chartClicked($event)">
+          </canvas>
+        </div>
+        <div class="row chartList mt-2">
+          <div class="col-md-6 pr-0">
+            <ul class="list-unstyled">
+              <li><strong>NAM</strong> - Network Agent Members</li>
+              <li><strong>NBM</strong> - Network Distributor Members</li>
+              <li><strong>NGM</strong> - Network Aggregative Members</li>
+              <li><strong>BAM</strong> - Business Agent Members</li>
+              <li><strong>BDM</strong> - Business Distributor Members</li>
+            </ul>
+          </div>
+          <div class="col-md-6 pr-0">
+            <ul class="list-unstyled">
+              <li><strong>BGM</strong> - Business Aggregative Members</li>
+              <li><strong>CAM</strong> - Commission Agent Members</li>
+              <li><strong>CDM</strong> - Commission Distributor Members</li>
+              <li><strong>CGM</strong> - Commission Aggregative Members</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-xl-6">
+      <div class="card customCard px-4">
+        <h2 class="h2 headUnder">Traffic &amp; Sales</h2>
+        <div class="d-block">
+          <canvas baseChart height="300px" class="chart"
+              [chartType]="officerchartType"
+              [datasets]="officerchartDatasets"
+              [labels]="officerchartLabels"
+              [colors]="officerChart"
+              [options]="officerchartOptions"
+              [legend]="true"
+              (chartHover)="officerchartHovered($event)"
+              (chartClick)="officerchartClicked($event)">
+          </canvas>
+        </div>
+        <div class="row chartList mt-2">
+          <div class="col-md-6 pr-0">
+            <ul class="list-unstyled">
+              <li><strong>SOC</strong> - Total Number of Sales Officer (SO)</li>
+              <li><strong>SOA</strong> - Total Amount of Sales Officer (SO)</li>
+              <li><strong>COC</strong> - Total Number of Checking Officer (CO)</li>
+            </ul>
+          </div>
+          <div class="col-md-6 pr-0">
+            <ul class="list-unstyled">
+              <li><strong>COA</strong> - Total Amount of Checking Officer (SO)</li>
+              <li><strong>FOC</strong> - Total Number of Financial Officer (SO)</li>
+              <li><strong>FOA</strong> - Total Amount of Financial Officer (SO)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="row mt-3">
+  <div class="col-md-12">
+    <h2 class="h2 headUnder">User Status</h2>
+    <div class="row">
+      <div class="col-xl-3 col-md-6">
+        <div class="agent_box border_blue">
+          <span>Total Agents</span>
+          <h4>140</h4>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <div class="agent_box border_green">
+          <span>Toatl Avtive Agents</span>
+          <h4>36</h4>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <div class="agent_box border_yellow">
+          <span>Total Inactive Agents</span>
+          <h4>10</h4>
+        </div>
+      </div>
+      <div class="col-xl-3 col-md-6">
+        <div class="agent_box border_red">
+          <span>Total Blocked Agents</span>
+          <h4>06</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-md-6">
+    <h2 class="h2 headUnder">Devices</h2>
+    <div class="row">
+        <div class="col-md-6">
+           <div class="device_box border_green">
+              <span>Active Devices</span>
+              <h4>2</h4>
+           </div>
+        </div>
+    </div>
+  </div> -->
+</div>

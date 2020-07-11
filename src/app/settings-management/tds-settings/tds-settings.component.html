@@ -1,0 +1,133 @@
+<div class="row mt-4">
+  <div class="col-12">
+    <h2 class="h2 headUnder">TDS Settings</h2>
+  </div>
+</div>
+<form>
+  <div class="row">
+    <div class="col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Criteria</mat-label>
+        <mat-select>
+          <mat-option value="option" selected>If PAN is available</mat-option>
+          <mat-option value="option">If PAN is not available</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Current TDS Value</mat-label>
+        <input matInput placeholder="Current SGST Value">
+      </mat-form-field>  
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Updated TDS</mat-label>
+        <input matInput placeholder="Updated SGST Value" required>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Date of Applicability</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>  
+    </div>
+    <div class="col-md-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Remarks</mat-label>
+        <input matInput placeholder="Remarks" required>
+      </mat-form-field>  
+    </div>
+    <div class="col-md-4">
+      <div class="customInput position-relative">
+        <input type="file" class="custom-file-input" id="customFile" name="filename">
+        <label class="custom-file-label" for="customFile">Upload Docs as Proof*</label>
+      </div> 
+    </div>
+  </div>
+  <div class="row mt-4 mt-md-0">
+    <div class="col-12 d-flex justify-content-between">
+      <button class="btns greenBtn float-right d-block d-md-none" mat-raised-button>Submit</button>
+      <a class="btns greenBtn btnSmall" style="height: 36px;" href="#" mat-raised-button><i class="fa fa-table" aria-hidden="true"></i> Export to Excel</a>
+      <button class="btns greenBtn float-right d-none d-md-block" mat-raised-button>Submit</button>
+    </div>
+  </div> 
+</form>
+<div class="row">
+    <div class="col-12">
+      <div class="table-responsive gstTbl mt-4">
+        <table mat-table [dataSource]="dataSource" class="table customTable shadow-none mb-0">
+          <!-- Position Column -->
+          <ng-container matColumnDef="no">
+            <th mat-header-cell *matHeaderCellDef> S.No </th>
+            <td mat-cell *matCellDef="let element"> {{element.no}} </td>
+          </ng-container>
+        
+          <ng-container matColumnDef="requested_date">
+            <th mat-header-cell *matHeaderCellDef> Requested Date</th>
+            <td mat-cell *matCellDef="let element"> {{element.requested_date}} </td>
+          </ng-container>              
+          <ng-container matColumnDef="txn_id">
+            <th mat-header-cell *matHeaderCellDef>Transaction ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.txn_id}} </td>
+          </ng-container>
+          <!-- Weight Column -->
+          <ng-container matColumnDef="previous_value">
+            <th mat-header-cell *matHeaderCellDef>Previous Value</th>
+            <td mat-cell *matCellDef="let element"> {{element.previous_value}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="updated_value">
+            <th mat-header-cell *matHeaderCellDef>Updated Value</th>
+            <td mat-cell *matCellDef="let element"> {{element.updated_value}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="crieteria">
+            <th mat-header-cell *matHeaderCellDef> Crieteria</th>
+            <td mat-cell *matCellDef="let element"> {{element.crieteria}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="txn_status">
+            <th mat-header-cell *matHeaderCellDef>Transaction Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.txn_status}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="processed_date">
+            <th mat-header-cell *matHeaderCellDef>Processed Date</th>
+            <td mat-cell *matCellDef="let element"> {{element.processed_date}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="updated_by">
+            <th mat-header-cell *matHeaderCellDef>Updated By</th>
+            <td mat-cell *matCellDef="let element"> {{element.updated_by}} </td>
+          </ng-container>
+          <ng-container matColumnDef="ip_address">
+            <th mat-header-cell *matHeaderCellDef>IP Address</th>
+            <td mat-cell *matCellDef="let element"> {{element.ip_address}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="remarks">
+            <th mat-header-cell *matHeaderCellDef>Remarks</th>
+            <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="download_proof">
+            <th mat-header-cell *matHeaderCellDef>Download Proof</th>
+            <td class="downloadIcon" mat-cell *matCellDef="let element"> {{element.download_proof}} </td>
+          </ng-container>
+          
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>   
+      </div>
+      
+        <mat-paginator  [length]="100"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>       
+    </div>  
+</div>

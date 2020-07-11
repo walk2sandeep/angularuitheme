@@ -1,0 +1,130 @@
+<div class="row mt-4">
+    <div class="col-12">
+        <h2 class="h2 headUnder text-capitalize mobBtnAlign">KPI Report</h2>
+        <div class="position-absolute topBtn">
+            <a class="btns greenBtn btnSmall" href="#" mat-raised-button><i class="fa fa-table" aria-hidden="true"></i> Export to Excel</a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xl-10 col-md-12">
+        <div class="row">
+            <div class="col-md-6 col-xl-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Select Your Service</mat-label>
+                    <mat-select>
+                        <mat-option value="option">All</mat-option>
+                        <mat-option value="option">AEPS</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>From Date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>To Date</mat-label>
+                    <input matInput [matDatepicker]="picker1">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <mat-form-field appearance="outline">
+                    <mat-label>Select Your Bank</mat-label>
+                    <mat-select>
+                        <mat-option value="option">All</mat-option>
+                        <mat-option value="option">YES Bank</mat-option>
+                        <mat-option value="option">Axis Bank</mat-option>
+                        <mat-option value="option">HDFC Bank</mat-option>
+                        <mat-option value="option">ICICI Bank</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-xl-2 mt-2 text-right text-lg-left">
+        <button class="btns primaryBtn" mat-raised-button>Search</button>
+    </div>
+</div>
+<div class="row mt-4 mt-xl-0">
+    <div class="col-12">
+    <div class="table-responsive">
+        <table mat-table [dataSource]="dataSource" class="table customTable shadow-none mb-0">
+        
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> S.No </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> User Name </th>
+            <td mat-cell *matCellDef="let element" style="min-width:200px;"> {{element.name}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> User Id </th>
+            <td mat-cell *matCellDef="let element" style="min-width:120px;"> {{element.symbol}} </td>
+        </ng-container>              
+        <ng-container matColumnDef="depositno">
+            <th mat-header-cell *matHeaderCellDef> Transaction Date & Time </th>
+            <td mat-cell *matCellDef="let element" style="min-width:250px;"> {{element.depositno}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="oss_count">
+            <th mat-header-cell *matHeaderCellDef> Transaction Count - OSS </th>
+            <td mat-cell *matCellDef="let element" style="min-width:230px;"> {{element.oss_count}} </td>
+        </ng-container>
+        <ng-container matColumnDef="oss_amount">
+            <th mat-header-cell *matHeaderCellDef> Transaction Amount <i class="fa fa-inr"></i> - OSS</th>
+            <td mat-cell *matCellDef="let element" style="min-width:250px;"> {{element.oss_amount}} </td>
+        </ng-container>
+        <ng-container matColumnDef="bank">
+            <th mat-header-cell *matHeaderCellDef> Bank Name </th>
+            <td mat-cell *matCellDef="let element" style="min-width:150px;"> {{element.bank}} </td>
+        </ng-container>
+        <ng-container matColumnDef="bank_count">
+            <th mat-header-cell *matHeaderCellDef> Transaction Count - Bank </th>
+            <td mat-cell *matCellDef="let element" style="min-width:230px;"> {{element.bank_count}} </td>
+        </ng-container>
+        <ng-container matColumnDef="bank_amount">
+            <th mat-header-cell *matHeaderCellDef> Transaction Amount <i class="fa fa-inr"></i> - Bank</th>
+            <td mat-cell *matCellDef="let element" style="min-width:250px;"> {{element.bank_amount}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="settlement_amount">
+            <th mat-header-cell *matHeaderCellDef> Settlement Amount <i class="fa fa-inr"></i></th>
+            <td mat-cell *matCellDef="let element"  style="min-width:200px;"> {{element.settlement_amount}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef style="min-width:100px;"> Status</th>
+            <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="remarks">
+            <th mat-header-cell *matHeaderCellDef style="min-width:100px;"> Remarks </th>
+            <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td class="viewIcon" mat-cell *matCellDef="let element"> {{element.action}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>   
+    </div>
+    
+        <mat-paginator  [length]="100"
+                    [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>       
+    </div>  
+</div>

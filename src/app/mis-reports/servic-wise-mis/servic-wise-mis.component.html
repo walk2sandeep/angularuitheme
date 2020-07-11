@@ -1,0 +1,77 @@
+<section class="whiteBox">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="h2 headUnder text-capitalize">Service wise MIS</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>User Type</mat-label>
+                <mat-select>
+                    <mat-option value="option">Agent</mat-option>
+                    <mat-option value="option">State Distributor</mat-option>
+                    <mat-option value="option">District Distributor</mat-option>
+                    <mat-option value="option">Pin code Distributor</mat-option>
+                    <mat-option value="option">Aggregator</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>User ID</mat-label>
+                <input matInput placeholder="User Wise" required>
+            </mat-form-field>
+        </div>
+
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>From Date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>To Date</mat-label>
+                <input matInput [matDatepicker]="picker1">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Service Type</mat-label>
+                <mat-select>
+                    <mat-option value="option">AEPS</mat-option>
+                    <mat-option value="option">Aadhaar Pay</mat-option>
+                    <mat-option value="option">DMT(Money Transfer)</mat-option>
+                    <mat-option value="option">Mobile Recharge/DTH</mat-option>
+                    <mat-option value="option">UPI</mat-option>
+                    <mat-option value="option">Payment Gateway</mat-option>
+                    <mat-option value="option">Fund Transfer</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-12 mb-4 mb-xl-0 text-right">
+            <button class="btns secondaryBtn mr-2" mat-raised-button>Reset</button>
+            <button class="btns primaryBtn" mat-raised-button>Search</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <mat-tab-group class="boxTab" mat-align-tabs="left"  animationDuration="0ms">
+                <mat-tab label="Wallet Balance History">
+
+                </mat-tab>
+                <mat-tab label="Wallet Recharge History">
+
+                </mat-tab>
+                <mat-tab label="Transaction History">
+
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+@media(max-width:768px) {
+    .maxheader {
+        margin-left: 25px !important;
+        margin-right: 25px!important;
+        display: none;
+    }
+}
+
+@media(min-width:769px) {
+    .minheader {
+        margin-left: 25px !important;
+        margin-right: 25px!important;
+        display: none;
+    }
+}
